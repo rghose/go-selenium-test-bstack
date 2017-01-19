@@ -7,3 +7,6 @@ build:
 
 run: setenv build
 	go run main.go
+
+indent:
+	gofmt -w main.go

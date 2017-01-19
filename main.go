@@ -13,8 +13,12 @@ import (
 func ExampleFindElement() {
 	var webDriver selenium.WebDriver
 	var err error
-	remoteUrl := "http://<user>:<key>@hub-cloud.browserstack.com/wd/hub"
-	caps := selenium.Capabilities(map[string]interface{}{"browserName": "firefox"})
+	remoteUrl := "http://rahulghose2:EQhNn9ipXqVWWqpN9mmM@hub-cloud.browserstack.com/wd/hub"
+	caps := selenium.Capabilities(map[string]interface{}{
+		"name":               "Mirage Testing Names now",
+		"browserName":        "firefox",
+		"browserstack.debug": "true",
+	})
 	if webDriver, err = selenium.NewRemote(caps, remoteUrl); err != nil {
 		fmt.Printf("Failed to open session: %s\n", err)
 		return
